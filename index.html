@@ -2,88 +2,128 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="jQuery math practice">
-    <meta name="author" content="Dale Foo">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="jQuery math practice">
+  <meta name="author" content="Dale Foo">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
-    <link href="css/custom.css" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
-    <script src="js/application.js"></script>
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
 
-  </head>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+  <script src="js/application.js"></script>
 
-  <body>
+</head>
+
+<body>
   <div class="container">
     <div class="title">
       <h1>10 Seconds of Math</h1>
     </div>
     <div class="playbox">
-      <div id="settings" class="white-box">
-        <h2 id="text-selectrange">Number limit</h2>
-        <div id="slider-range-max">
-        </div>  <!-- end maths range slider -->
-        <p>
-          <label for="amount">Number limit</label>
-          <input type="text" id="amount" readonly>
-        </p>
-        <div id="div-operations">
-          <ul class="no-bullets">
-            <li>
-              <label><input type="checkbox" checked="checked" value="add">" + "
-              <span id="text-op-add">Addition</span>
-              </label>
-            </li>
-            <li>
-              <label><input type="checkbox" value="sub">" - "
-              <span id="text-op-add">Subtraction</span>
-              </label>
-            </li>
-            <li>
-              <label><input type="checkbox" value="pow">" x2 "
-              <span id="text-op-add">Powers</span>
-              </label>
-            </li>
-          </ul>
-        </div>  <!-- end div operations -->
-      </div>  <!-- end settings -->
+      <div class="row">
+
+        <div id="settings" class="col-xs-4 col-xs-offset-2 white-box">
+          <h2 id="text-selectrange">Number limit</h2>
+          <div id="slider-range-max">
+          </div>
+          <!-- end maths range slider -->
+          <p>
+            <label for="amount">Number limit</label>
+            <input type="text" id="amount" readonly>
+          </p>
+          <div id="div-operations">
+            <ul class="no-bullets">
+              <li>
+                <label>
+                  <input type="checkbox" checked="checked" value="add">" + "
+                  <span id="text-op-add">Addition</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" value="sub">" - "
+                  <span id="text-op-sub">Subtraction</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" value="pow">" x2 "
+                  <span id="text-op-pow">Powers</span>
+                </label>
+              </li>
+            </ul>
+            <ul class="no-bullets">
+              <li>
+                <label>
+                  <input type="checkbox" value="mul">" * "
+                  <span id="text-op-mul">Multiplication</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" value="div">" / "
+                  <span id="text-op-div">Division</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" value="sqrt">" /x "
+                  <span id="text-op-sqrt">Square roots</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <!-- end div operations -->
+        </div>
+        <!-- end settings -->
 
 
-      <div id="results" class="white-box">
-        <p id="time-box">
-          <span id="time-left">10</span>
-          <span id="time-left-text">seconds left</span>
-          <span id="time-left-indicator"></span>
-        </p>
-        <p id="results-box" class="invisible">
-          <span id="youScored">You scored</span>
-          <span id="score"></span>
-        </p>
-      </div>   <!-- end results -->
+        <div id="results" class="col-xs-4 white-box">
+          <p id="time-box">
+            <span id="time-left">10</span>
+            <span id="time-left-text">seconds left</span>
+            <span id="time-left-indicator"></span>
+          </p>
+          <p id="results-box" class="invisible">
+            <span id="youScored">You scored</span>
+            <span id="score"></span>
+          </p>
+        </div>
+        <!-- end results -->
+      </div>
+      <!-- end rowbox
+ -->
       <div id="start-quiz" class="invisible">
         <a class="button blue">Play again</a>
       </div>
-      <div id="questionbox">
+      <div id="questionbox" class="col-xs-4 col-xs-offset-4">
         <p id="question"></p>
         <div id="answerbox">
           <div class="input-group">
             <input id="question-answer" pattern="[0-9]{1, 4}" autofocus placeholder="your answer" type="tel" class="form-control">
-          </div>  <!-- end input group -->
-        </div>  <!-- end answerbox -->
-      </div>  <!-- end questionbox -->
+          </div>
+          <!-- end input group -->
+        </div>
+        <!-- end answerbox -->
+      </div>
+      <!-- end questionbox -->
 
-    </div>   <!-- end playBox -->
+    </div>
+    <!-- end playBox -->
 
 
-  </div>  <!-- end container -->
+  </div>
+  <!-- end container -->
 
 
-  </body>
+</body>
+
 </html>

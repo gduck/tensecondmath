@@ -14,21 +14,24 @@ body {
 }
 
 #results {
-  display: inline-block;
+  /*display: inline-block;*/
   padding: 20px;
-  text-align: center;
-  width: 260px;
-  height: 215px;
+  margin: 10px;
+  /*text-align: center;
+  width: 260px;*/
+  /*height: 215px;*/
   font-size: 40px;
   /*display: none;*/
 }
 
 #settings {
-  display: inline-block;
-  text-align: center;
+  /*display: inline-block;*/
   padding: 10px;
-  float: center;
-  height: 215px;
+  margin: 10px;
+  /*text-align: center;
+  padding: 10px;
+  float: center;*/
+  /*height: 215px;*/
 }
 
 #start-quiz {
@@ -36,12 +39,12 @@ body {
 }
 
 #questionbox {
-  text-align: center;
+  /*text-align: center;*/
   margin: 0 auto;
 }
 
 .playbox {
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .invisible {
@@ -50,11 +53,11 @@ body {
 
 #time-left {
   font-size: 80px;
-  display: inline-block;
+  /*display: inline-block;*/
 }
 
 #time-left-text {
-  display: block;
+  /*display: block;*/
   margin-top: -20px;
   color: #777;
 }
