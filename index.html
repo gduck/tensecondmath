@@ -15,6 +15,7 @@
   <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
   <link href="css/custom.css" rel="stylesheet">
 
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
@@ -28,7 +29,7 @@
       <h1>10 Seconds of Math</h1>
     </div>
     <div class="playbox">
-      <div class="row">
+      <div class="row col-xs-12">
 
         <div id="settings" class="col-xs-4 col-xs-offset-2 white-box">
           <h2 id="text-selectrange">Number limit</h2>
@@ -87,35 +88,36 @@
 
 
         <div id="results" class="col-xs-4 white-box">
-          <p id="time-box">
-            <span id="time-left">10</span>
-            <span id="time-left-text">seconds left</span>
+          <div id="time-box" class="col-xs-10 col-xs-offset-2">
+            <span id="time-left" class="col-xs-offset-4">10</span></br>
+            <span id="time-left-text" class="col-xs-10">seconds left</span>
             <span id="time-left-indicator"></span>
-          </p>
-          <p id="results-box" class="invisible">
-            <span id="youScored">You scored</span>
+          </div>
+          <div id="results-box" class="invisible">
+            <span id="you-scored">You scored</span>
             <span id="score"></span>
-          </p>
+          </div>
         </div>
         <!-- end results -->
       </div>
-      <!-- end rowbox
- -->
-      <div id="start-quiz" class="invisible">
-        <a class="button blue">Play again</a>
-      </div>
-      <div id="questionbox" class="col-xs-4 col-xs-offset-4">
-        <p id="question"></p>
-        <div id="answerbox">
-          <div class="input-group">
-            <input id="question-answer" pattern="[0-9]{1, 4}" autofocus placeholder="your answer" type="tel" class="form-control">
-          </div>
-          <!-- end input group -->
+      <!-- end row  -->
+      <div class="row  col-xs-12">
+        <div id="start-quiz" class="col-xs-12 invisible">
+          <a class="button">Play again</a>
         </div>
-        <!-- end answerbox -->
+        <div id="questionbox" class="col-xs-4 col-xs-offset-6">
+          <p id="question"></p>
+          <div id="answerbox">
+            <div class="input-group">
+              <input id="question-answer" pattern="[0-9]{1, 4}" autofocus placeholder="your answer" type="tel" class="form-control">
+            </div>
+            <!-- end input group -->
+          </div>
+          <!-- end answerbox -->
+        </div>
+        <!-- end questionbox -->
       </div>
-      <!-- end questionbox -->
-
+      <!-- end row -->
     </div>
     <!-- end playBox -->
 

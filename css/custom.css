@@ -1,12 +1,15 @@
 body {
   background-color: #eee;
-/*  font-family: 
-*/}
+  font-family: 'Shadows Into Light';
+}
 
 .white-box {
   background-color: #fff;
   border-radius: 5px;
+}
 
+.row {
+  margin-top: 20px;
 }
 
 .title h1{
@@ -14,37 +17,24 @@ body {
 }
 
 #results {
-  /*display: inline-block;*/
-  padding: 20px;
-  margin: 10px;
-  /*text-align: center;
-  width: 260px;*/
-  /*height: 215px;*/
+  margin-left: 20px;
   font-size: 40px;
-  /*display: none;*/
-}
-
-#settings {
-  /*display: inline-block;*/
-  padding: 10px;
-  margin: 10px;
-  /*text-align: center;
-  padding: 10px;
-  float: center;*/
-  /*height: 215px;*/
 }
 
 #start-quiz {
-  /*display: block;*/
+  text-align: center;
+  font-size: 60px;  
 }
 
 #questionbox {
-  /*text-align: center;*/
-  margin: 0 auto;
+  font-size: 40px;
 }
 
-.playbox {
-  /*text-align: center;*/
+#results-box {
+  text-align: center;
+}
+#you-scored {
+  padding-top: 20px;
 }
 
 .invisible {
@@ -52,12 +42,10 @@ body {
 }
 
 #time-left {
-  font-size: 80px;
-  /*display: inline-block;*/
+  font-size: 100px;
 }
 
 #time-left-text {
-  /*display: block;*/
   margin-top: -20px;
   color: #777;
 }
