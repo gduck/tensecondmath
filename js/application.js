@@ -3,14 +3,10 @@ jQuery(document).ready(function() {
 
   var numberLimit = 20;
   var timeLeft = 10;
-  var number1 = Math.random();
-  var number2 = Math.random();
-  var questionNumber1; 
-  var questionNumber2; 
   var timerOn = false;
   var processNumber;
   var answeredRight = 0;
-  var answer = eval($('#question').text());
+  //var answer = eval($('#question').text());
   var operator = 'add';
   var questionAndAnswer = {};
 
@@ -56,6 +52,8 @@ jQuery(document).ready(function() {
         };
         break;
       case 'div':
+        while (num2 == 0) {num2 = getRandomInt(maxNum);}
+        num1 = Math.round(num1 / 2);
         var question = num1*num2 + " / " + num2;
         questionAndAnswer = {
           question: question,
@@ -63,14 +61,23 @@ jQuery(document).ready(function() {
         };
         break;
       case 'pow':
+        num1 = Math.round((num * 3)/4);
         var question = num1 + " ^ 2";
         questionAndAnswer = {
           question: question,
           answer: Math.pow(num1, 2)
         };
-        console.log(questionAndAnswer.question);
+        break;
+      case 'sqrt':
+        num1 = Math.round(num1 / 2);
+        var question = "sqrt "+ Math.pow(num1,2);
+        questionAndAnswer = {
+          question: question,
+          answer: Math.pow(Math.pow(num1,2), .5)
+        };
         break;
      }
+     console.log("here at the end of the switch");
     console.log(questionAndAnswer.question);
     $('#question').text(questionAndAnswer.question);
     return questionAndAnswer;
@@ -157,7 +164,6 @@ jQuery(document).ready(function() {
       slide: function( event, ui ) {
         $( "#amount" ).val( ui.value );
         numberLimit = ui.value;
-        console.log(numberLimit);
         refreshQuestion();
       }
     });

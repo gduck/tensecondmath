@@ -14,11 +14,17 @@ body {
 
 .title h1{
   text-align: center;
+  font-size: 80px;
 }
 
 #results {
   margin-left: 20px;
   font-size: 40px;
+  height: 372px;
+}
+
+#div-operations{
+  font-size: 25px;
 }
 
 #start-quiz {
@@ -27,7 +33,7 @@ body {
 }
 
 #questionbox {
-  font-size: 40px;
+  font-size: 100px;
 }
 
 #results-box {
@@ -36,11 +42,15 @@ body {
 #you-scored {
   padding-top: 20px;
 }
-
+#question-answer {
+  font-size: 20px;
+}
 .invisible {
   display: none;
 }
-
+#time-box {
+  padding-top: 80px;
+}
 #time-left {
   font-size: 100px;
 }
