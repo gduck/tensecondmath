@@ -6,17 +6,15 @@ jQuery(document).ready(function() {
   var timerOn = false;
   var processNumber;
   var answeredRight = 0;
-  //var answer = eval($('#question').text());
   var operator = 'add';
   var questionAndAnswer = {};
 
-  var opArray = $('#div-operations :checked');
+  var opArray; // = $('#div-operations :checked');
   
   var getRandomOp = function () {
     opArray = $('#div-operations :checked');
     var randomOp = Math.floor(Math.random() * opArray.length);
     operator = opArray[randomOp].value;
-    console.log("we just got a random op " + operator);
     return operator;
   }
 
@@ -61,7 +59,7 @@ jQuery(document).ready(function() {
         };
         break;
       case 'pow':
-        num1 = Math.round((num * 3)/4);
+        num1 = Math.round((num1 * 3)/4);
         var question = num1 + " ^ 2";
         questionAndAnswer = {
           question: question,
@@ -77,15 +75,12 @@ jQuery(document).ready(function() {
         };
         break;
      }
-     console.log("here at the end of the switch");
-    console.log(questionAndAnswer.question);
     $('#question').text(questionAndAnswer.question);
     return questionAndAnswer;
   }
 
   var refreshQuestion = function () {
     operator = getRandomOp();
-    console.log("operator is "+ operator);
     questionAndAnswer = getQuestion(numberLimit, operator);
     answer = questionAndAnswer.answer;
   }
@@ -96,7 +91,7 @@ jQuery(document).ready(function() {
 
   var timeout_trigger = function () {
     if (timeLeft > 0) {
-      timeLeft -= 1;
+      timeLeft--;
       $('#time-left').text(timeLeft);
     } else {
       clearInterval(processNumber);
@@ -133,7 +128,7 @@ jQuery(document).ready(function() {
   var timeout_init = function () {
     if (!timerOn) {
       processNumber = setInterval(timeout_trigger, 1000);
-      console.log("new process "+processNumber);
+      //console.log("new process "+processNumber);
       timerOn = true;
     }
   }
@@ -153,7 +148,7 @@ jQuery(document).ready(function() {
     var getAnswer = $('#question-answer').val();
     answer = questionAndAnswer.answer;    
     if (getAnswer == answer) {
-      answeredRight +=1;
+      answeredRight++;
       timeLeft++;
       timeout_init();
       cleanInput();
@@ -173,7 +168,7 @@ jQuery(document).ready(function() {
     opArray = $('#div-operations :checked');
     var randomOp = Math.floor(Math.random() * opArray.length);
     operator = opArray[randomOp].value;
-    console.log(operator);
+    //console.log(operator);
    });
 
 
@@ -192,10 +187,6 @@ jQuery(document).ready(function() {
     $( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
   });
 
-//  $( "#slider-range-max" ).on("change", function() {
-//    numberLimit = $( "#slider-range-max" ).slider( "value" );
-//    console.log(numberLimit);
-//  })
 
 
 });  // end document ready
