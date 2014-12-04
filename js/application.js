@@ -105,7 +105,29 @@ jQuery(document).ready(function() {
       $('#start-quiz').removeClass("invisible");
       $('#results-box').removeClass("invisible");
       $('#score').text(answeredRight);
+      $('#ranking').text("");
+      postScore(getName());
     }
+  }
+
+  var postScore = function (myName) {
+    if (myName == undefined) return;
+    $.ajax({
+      type: 'POST',
+      url: 'https://stark-eyrie-2329.herokuapp.com/leaders/create',
+      data: {'name': myName, 'score': answeredRight},
+      success: function(html) {
+        $('#ranking').text((html.name) +"! You're ranked top " + (html.ranking*100).toFixed(2) + "%");
+      },
+      error: function() {
+        console.log("There was an error");
+      }
+    })
+  }
+
+  var getName = function () {
+    var name = prompt("Please enter your name", "Harry Potter");
+    return name;
   }
 
   var timeout_init = function () {
