@@ -58,6 +58,7 @@ body {
 #time-left-text {
   margin-top: -20px;
   color: #777;
+  text-align: center;
 }
 
 .no-bullets {

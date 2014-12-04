@@ -51,7 +51,7 @@ jQuery(document).ready(function() {
         break;
       case 'div':
         while (num2 == 0) {num2 = getRandomInt(maxNum);}
-        num1 = Math.round(num1 / 2);
+        num2 = Math.round(num2 / 4);
         var question = num1*num2 + " / " + num2;
         questionAndAnswer = {
           question: question,
@@ -166,6 +166,10 @@ jQuery(document).ready(function() {
 
    $( "#div-operations :checkbox" ).on( "click", function () {
     opArray = $('#div-operations :checked');
+     if (opArray.length == 0) { 
+       $('#text-op-add').prop('checked', true); 
+       opArray = $('#text-op-add');
+     }
     var randomOp = Math.floor(Math.random() * opArray.length);
     operator = opArray[randomOp].value;
     //console.log(operator);
